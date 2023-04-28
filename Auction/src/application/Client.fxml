@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ClientController">
+   <bottom>
+      <HBox prefHeight="52.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="Feedback" prefHeight="26.0" prefWidth="247.0" promptText="This is your feedback">
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets left="58.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#buyNow" text="Buy Now!" textFill="#07ad0f">
+               <HBox.margin>
+                  <Insets left="50.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <TextField fx:id="bidAmount" prefHeight="25.0" prefWidth="95.0" promptText="Enter amount...">
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#sendBid" text="Bid" textFill="#0a8e15">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <top>
+      <VBox prefHeight="70.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="welcome" text="Welcome [name]!" textFill="#daa520">
+               <VBox.margin>
+                  <Insets left="250.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="90.0" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="dropDown" prefHeight="25.0" prefWidth="202.0" promptText="item options...">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></ComboBox>
+                  <Pane prefHeight="25.0" prefWidth="306.0" />
+                  <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="100.0" mnemonicParsing="false" onAction="#logout" text="Logout     " textFill="RED">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Label fx:id="chooseItem" alignment="CENTER" prefHeight="17.0" prefWidth="598.0" text="^Select an item to bid on from the drop down box." textFill="#b32aee">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="20.0" />
+         </padding>
+      </VBox>
+   </top>
+   <center>
+      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="261.0" prefWidth="504.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="image" fitHeight="308.0" fitWidth="210.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="https://i.etsystatic.com/9977079/r/il/0b30e4/1618889229/il_fullxfull.1618889229_o3jj.jpg" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+            <Pane prefHeight="261.0" prefWidth="27.0" />
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="261.0" prefWidth="189.0">
+               <children>
+                  <Label fx:id="itemName" alignment="TOP_LEFT" prefHeight="24.0" prefWidth="201.0" text="Item Name:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="itemDesc" alignment="TOP_LEFT" prefHeight="146.0" prefWidth="189.0" text="Item Description:" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="minPrice" prefHeight="29.0" prefWidth="201.0" text="Starting Price:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="buyPrice" prefHeight="30.0" prefWidth="201.0" text="Buy Price:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="currentBid" prefHeight="26.0" prefWidth="201.0" text="Current Bid:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label fx:id="itemStatus" prefHeight="32.0" prefWidth="201.0" text="Item Status:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <right>
+      <VBox prefHeight="269.0" prefWidth="128.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Your Current Bid" textFill="BLUE">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font name="Yu Gothic Regular" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="yourCurrentBid" />
+            <Label text="Your Bid History" textFill="#800000">
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="bidHistory" minHeight="-Infinity" prefHeight="222.0" prefWidth="128.0" wrapText="true" />
+         </children>
+         <BorderPane.margin>
+            <Insets right="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+</BorderPane>
